@@ -36,22 +36,7 @@
         default="MainActivity"
         suggest="${activityClass}"
         help="The name of the activity. For launcher activities, the application title." />
-
-    <parameter
-        id="isLauncher"
-        name="Launcher Activity"
-        type="boolean"
-        default="false"
-        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
-
-    <parameter
-        id="parentActivityClass"
-        name="Hierarchical Parent"
-        type="string"
-        constraints="activity|exists|empty"
-        default=""
-        help="The hierarchical parent activity, used to provide a default implementation for the 'Up' button" />
-
+		
     <parameter
         id="packageName"
         name="Package name"
