@@ -2,10 +2,10 @@
 <template
     format="3"
     revision="4"
-    name="Nicky New Project"
+    name="Nicky MVP Activity"
     minApi="7"
     minBuildApi="14"
-    description="Create a new project.">
+    description="Creates a new MVP activity.">
 
     <category value="Activity" />
     <formfactor value="Mobile" />
@@ -36,29 +36,37 @@
         default="MainActivity"
         suggest="${activityClass}"
         help="The name of the activity. For launcher activities, the application title." />
-		
+
+    <parameter
+        id="menuName"
+        name="Menu Resource Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="menu_${classToResource(activityClass)}"
+        default="menu_main"
+        help="The name of the resource file to create for the menu items" />
+
+    <parameter
+        id="isLauncher"
+        name="Launcher Activity"
+        type="boolean"
+        default="false"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+
+    <parameter
+        id="parentActivityClass"
+        name="Hierarchical Parent"
+        type="string"
+        constraints="activity|exists|empty"
+        default=""
+        help="The hierarchical parent activity, used to provide a default implementation for the 'Up' button" />
+
     <parameter
         id="packageName"
         name="Package name"
         type="string"
-        constraints="package|nonempty"
+        constraints="package"
         default="com.mycompany.myapp" />
-        
-    <parameter
-        id="logFileName"
-        name="Log file name"		
-        type="string"
-		constraints="nonempty"
-        help="Log filename,same application name.e.t. xxxapp.log" />
-		
-	<parameter
-        id="MinSDK"
-        name="min Sdk Version"
-        type="string"
-		default="14"
-		constraints="nonempty"
-        help="min Sdk Version for AndroidManifest uses-sdk label" />		
-	
 
     <!-- 128x128 thumbnails relative to template.xml -->
     <thumbs>
