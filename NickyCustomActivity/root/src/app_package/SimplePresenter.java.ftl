@@ -1,5 +1,7 @@
 package ${packageName}.activity_${activityClass};
 
+import ${packageName}.Util.LogUtil;
+
 /**
  * Created by Nicky on 2015/6/22
  */
@@ -7,19 +9,27 @@ public class ${activityClass}Presenter
 {
     private I${activityClass}View  theView;
     private I${activityClass}Model theModel;
-
-    /* 获取Model数据，设置View 
-    public void setControlTitle()
+	
+	
+	public ${activityClass}Presenter(I${activityClass}View view)
     {
-		try
-		{
-			theView.setControlTitle(theModel.getControlTitle(theView.getContext()));
-		}
-		catch (Exception e)
-        {
-            LogUtil.toFile("${activityClass}Presenter setControlTitle error:"+e.toString());
-        }
-        
+        this.theView = view;
+        this.theModel = new ${activityClass}Model();
     }
-	*/
+	
+	
+	/* 获取Model数据，设置View */
+	public void setViewValue()
+    {
+        try
+        {
+          //theView.setControlTitle(theModel.getControlTitle(theView.getContext()));
+        }
+        catch (Exception e)
+        {
+            LogUtil.toFile("${activityClass}Presenter setViewValue error:"+e.toString());
+        }
+    }
+	
+	
 }
