@@ -1,5 +1,7 @@
 package ${packageName}.activity_${activityClass};
 
+import android.content.Context;
+
 /**
  * Created by Nicky on 2015/6/22
  */

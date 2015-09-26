@@ -1,9 +1,10 @@
 package ${packageName}.activity_${activityClass};
 
 import android.os.Bundle;
+import android.content.Context;
+import android.content.Intent;
+import ${packageName}.R;
 import ${packageName}.Application.BaseActivity;
-
-<#if applicationPackage??>import ${applicationPackage}.R;</#if>
 
 public class ${activityClass}Activity extends BaseActivity implements I${activityClass}View 
 {
