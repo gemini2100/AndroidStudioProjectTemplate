@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="Nicky Simple Fragment"
+    description="Creates a new fragment.">
+
+    <category value="Nicky" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <parameter
+        id="viewClass"
+        name="Fragment Class"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MyFragment"
+         />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <template
-    format="3"
-    revision="4"
+    format="5"
+    revision="6"
     name="Nicky New Project"
     minApi="7"
     minBuildApi="14"
@@ -55,7 +55,7 @@
         id="MinSDK"
         name="min Sdk Version"
         type="string"
-		default="14"
+		default="15"
 		constraints="nonempty"
         help="min Sdk Version for AndroidManifest uses-sdk label" />		
 	

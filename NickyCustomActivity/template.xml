@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <template
-    format="3"
-    revision="4"
+    format="5"
+    revision="6"
     name="Nicky MVP Activity"
     minApi="7"
     minBuildApi="14"
     description="Creates a new MVP activity.">
 
-    <category value="Activity" />
+    <category value="Nicky" />
     <formfactor value="Mobile" />
 
     <parameter
@@ -17,7 +17,7 @@
         constraints="class|unique|nonempty"
         suggest="${layoutToActivity(layoutName)}"
         default="MainActivity"
-        help="The name of the activity class to create" />
+        help="The name of the activity class,do not add Activity postfix" />
 
     <parameter
         id="layoutName"
@@ -36,30 +36,6 @@
         default="MainActivity"
         suggest="${activityClass}"
         help="The name of the activity. For launcher activities, the application title." />
-
-    <parameter
-        id="menuName"
-        name="Menu Resource Name"
-        type="string"
-        constraints="layout|unique|nonempty"
-        suggest="menu_${classToResource(activityClass)}"
-        default="menu_main"
-        help="The name of the resource file to create for the menu items" />
-
-    <parameter
-        id="isLauncher"
-        name="Launcher Activity"
-        type="boolean"
-        default="false"
-        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
-
-    <parameter
-        id="parentActivityClass"
-        name="Hierarchical Parent"
-        type="string"
-        constraints="activity|exists|empty"
-        default=""
-        help="The hierarchical parent activity, used to provide a default implementation for the 'Up' button" />
 
     <parameter
         id="packageName"

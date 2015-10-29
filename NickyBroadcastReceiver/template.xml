@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="Nicky Custom Broadcast Receiver"
+    description="Creates a new broadcast receiver component and adds it to your Android manifest.">
+
+		<category value="Nicky" />
+
+    <parameter
+        id="className"
+        name="Class Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MyReceiver" />
+
+    <parameter
+        id="isExported"
+        name="Exported"
+        type="boolean"
+        default="false"
+        help="Whether or not the broadcast receiver can receive messages from sources outside its application" />
+
+    <parameter
+        id="isEnabled"
+        name="Enabled"
+        type="boolean"
+        default="true"
+        help="Whether or not the broadcast receiver can be instantiated by the system" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

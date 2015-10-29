@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="Nicky custom simple view"
+    description="Creates a new simple custom view that extends LinearLayout.">
+
+    <category value="Nicky" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <parameter
+        id="viewClass"
+        name="View Class"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MyView"
+        help="By convention, should end in 'View'" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

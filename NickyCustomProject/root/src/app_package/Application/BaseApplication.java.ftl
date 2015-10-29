@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import java.util.ArrayList;
 import java.util.List;
+import android.content.Context;
 
 import ${packageName}.Util.CrashHandler;
 import ${packageName}.Util.LogUtil;
@@ -14,11 +15,13 @@ import ${packageName}.Util.LogUtil;
 public class BaseApplication extends Application
 {
     public static List<Activity> activities = new ArrayList<>();
+    private static Context context;
 
     @Override
     public void onCreate()
     {
         super.onCreate();
+        context = getApplicationContext();
         CrashHandler.getInstance(this);
     }
 
@@ -28,6 +31,11 @@ public class BaseApplication extends Application
     {
         super.onLowMemory();
         System.gc();
+    }
+
+    public static Context getAppContext()
+    {
+        return context;
     }
 
     public static void addActivity(Activity activity)
