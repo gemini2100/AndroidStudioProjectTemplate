@@ -52,7 +52,7 @@ public class SharedPreferencesUtil
 
     public String getString(String key)
     {
-        String str = sp.getString(key, null);
+        String str = sp.getString(key, "");
         return str;
     }
 
