@@ -16,6 +16,23 @@ public class FileUtil
 
     /*
     *
+    *  程序目录下文件---检查文件是否存在
+    *  context  上下文
+    *  filename 比如 "StaffHelperLog.txt"
+    *  存在返回 true ,不存在返回 false
+    * */
+    public static boolean fileExist(Context context, String filename)
+    {
+        File file = context.getFileStreamPath(filename);
+        if(file.exists())
+        {
+            return true;
+        }
+        return false;
+    }
+	
+    /*
+    *
     *  程序目录下文件---读取文件
     *  context  上下文
     *  filename 比如 "StaffHelperLog.txt"
@@ -143,6 +160,22 @@ public class FileUtil
         }
     }
 
+	    /*
+    *
+    *  SD卡目录下文件---检查文件是否存在
+    *  folder 比如 "/StaffHelperLog/LOG/"
+    *  filename 比如 "StaffHelperLog.txt"
+    *  存在返回 true ,不存在返回 false
+    * */
+    public static boolean sdFileExist(String folder, String filename)
+    {
+        File file = new File(folder , filename);
+        if (file.exists())
+        {
+            return true;
+        }
+        return false;
+    }
 
     /*
     *

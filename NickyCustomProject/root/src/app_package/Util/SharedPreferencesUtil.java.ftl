@@ -85,6 +85,12 @@ public class SharedPreferencesUtil
         Integer res = sp.getInt(key, 0);
         return res;
     }
+	
+	public Integer getInteger(String key,int defValue)
+    {
+        Integer res = sp.getInt(key, defValue);
+        return res;
+    }
 
     public void putInteger(String key, Integer value)
     {
